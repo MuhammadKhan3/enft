@@ -7,11 +7,11 @@ function LineInvestment({ investmentData }) {
             {
                 label: "Youtube",
                 data: investmentData.data,
-                backgroundColor: "rgba(111, 78, 242, 0.10)",
-                borderColor: "rgba(111, 78, 242, 1)",
+                backgroundColor: "#E3FFF7",
+                borderColor:  '#10E7AD',
                 // lineTension: 0,
-                pointRadius: 5,
-                borderWidth: 5,
+                // pointRadius: 5,
+                borderWidth: 2,
             },
         ],
     };
@@ -44,14 +44,16 @@ function LineInvestment({ investmentData }) {
                         display: false,
                         labelString: "Month",
                     },
+                    borderDash: [8, 4],
                 },
             ],
             yAxes: [
                 {
                     display: true,
                     gridLines: {
-                        display: false,
-                        drawBorder: false,
+                        display: true,
+                        drawBorder:true,
+                        borderDash: [8, 10],
                     },
                     scaleLabel: {
                         display: false,
@@ -61,11 +63,14 @@ function LineInvestment({ investmentData }) {
             ],
         },
     };
+
+    
     return (
         <>
             <Line
+                className="chartchart-height"
                 data={data}
-                height={150}
+                height={120}
                 options={options}
                 id="transaction-graph"
             />

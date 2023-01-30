@@ -3,212 +3,163 @@ import { connect } from "react-redux";
 import LineInvestment from "../components/chart/LineInvestment";
 import BalanceDetails from '../components/elements/BalanceDetails';
 import Layout from "../components/layout/Layout";
+import LayoutWithdraw from "../components/layout/LayoutWithdraw";
+import {FaCoins} from 'react-icons/fa'
+import {MdPolymer} from 'react-icons/md'
+import {FiRefreshCcw} from 'react-icons/fi'
+import {SiEthereum} from 'react-icons/si'
+import SelectDropdown from "../components/elements/dropDown";
+import WithdrawSetting from "../components/elements/withdrawSetting";
+
+
 
 function Balance({ investmentData }) {
     const [open, setOpen] = useState("a1");
+    const [label,setlabel]=useState("");
+    const [withdraw,setwithdraw]=useState(false);
+
+
+
     return (
         <>
-            <Layout
-                headTitle="Wallet"
-                pageTitle="Wallet"
-                pageTitleSub={"Welcome ENFTX Wallet page"}
+            <LayoutWithdraw
+                headTitle={withdraw ?  'Withdraw Settings':'Referal Statistics'}
+                pageTitle={withdraw ?  'Withdraw Settings':'Referal Statistics'}
+                pageTitleSub={""}
                 pageClass={"dashboard"}
                 parent={"Home"}
-                child={"Wallet"}
+                child={"Referal Statistics"}
+                withdraw={withdraw}
+                setwithdraw={setwithdraw}
             >
-                <div className="row">
-                    <div className="col-xxl-6 col-xl-6 col-lg-6">
-                        <div className="card">
-                            <div className="card-header">
-                                <h4 className="card-title">Balance Details</h4>
-                            </div>
-                            <div className="card-body">
-                                <BalanceDetails />
-                            </div>
+                <div class="main-wallet-header d-flex justify-content-around creator-widget active  align-items-center">
+                    
+                    <div className="main-wallet-header-list">
+                        <div className="wallet-icons-container-one">
+                           <div>
+                               <FaCoins color="black" size={20} className="wallet-icons-one"/>
+                           </div>
                         </div>
+                         <div className="d-flex flex-column wallet-icons-child">
+                            <p>Total Earnings in USD$</p>
+                            <h2>$125,50</h2>
+                         </div>
                     </div>
-                    <div className="col-xxl-6 col-xl-6 col-lg-6">
-                        <div className="card">
-                            <div className="card-header">
-                                <h4 className="card-title">Latest Transaction</h4>
-                                <a href="#">See More</a>
-                            </div>
-                            <div className="card-body bs-0 p-0 top-creators-content  bg-transparent">
-                                <div class="d-flex justify-content-between creator-widget active  align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="top-creators-user-img me-3">
-                                            <img src="/images/items/item_1.png" alt="" width="60" />
-                                        </div>
-                                        <div class="top-creators-info">
-                                            <h5 class="mb-0">Terry Camacho</h5>
-                                            <p class="mb-2">60 Items</p>
-                                        </div>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5 class="text-primary">0.2658 ETH</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between creator-widget active  align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="top-creators-user-img me-3">
-                                            <img src="/images/items/item_1.png" alt="" width="60" />
-                                        </div>
-                                        <div class="top-creators-info">
-                                            <h5 class="mb-0">Terry Camacho</h5>
-                                            <p class="mb-2">60 Items</p>
-                                        </div>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5 class="text-primary">0.2658 ETH</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between creator-widget active  align-items-center">
-                                    <div class="d-flex align-items-center">
-                                        <div class="top-creators-user-img me-3">
-                                            <img src="/images/items/item_1.png" alt="" width="60" />
-                                        </div>
-                                        <div class="top-creators-info">
-                                            <h5 class="mb-0">Terry Camacho</h5>
-                                            <p class="mb-2">60 Items</p>
-                                        </div>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5 class="text-primary">0.2658 ETH</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xxl-8 col-xl-8 col-lg-6">
-                        <div className="card">
-                            <div className="card-header">
-                                <h4 className="card-title">Investment</h4>
-                            </div>
-                            <div className="card-body">
 
-                                <LineInvestment
-                                    investmentData={investmentData}
-                                />
-                            </div>
+                    <div className="main-wallet-header-list">
+                        <div className="wallet-icons-container-two">
+                           <div >
+                               <SiEthereum  size={20} className="wallet-icons-two"/>
+                           </div>
                         </div>
+                         <div className="d-flex flex-column wallet-icons-child">
+                            <p>Total Earnings in USD$</p>
+                            <h2>$125,50</h2>
+                         </div>
                     </div>
-                    <div className=" col-xxl-4 col-xl-4 col-lg-6">
-                        <div className="row">
-                            <div className="col-xxl-12 col-xl-12 col-lg-12">
-                                <div className="credit-card visa">
-                                    <div className="type-brand">
-                                        <h4>Debit Card</h4>
-                                        <img
-                                            src="./images/cc/visa.png"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="cc-number">
-                                        <h6>1234</h6>
-                                        <h6>5678</h6>
-                                        <h6>7890</h6>
-                                        <h6>9875</h6>
-                                    </div>
-                                    <div className="cc-holder-exp">
-                                        <h5>Saiful Islam</h5>
-                                        <div className="exp">
-                                            <span>EXP:</span>
-                                            <strong>12/21</strong>
-                                        </div>
-                                    </div>
 
-                                    <div className="cc-info">
-                                        <div className="row justify-content-between align-items-center">
-                                            <div className="col-5">
-                                                <div className="d-flex">
-                                                    <p className="me-3">Status</p>
-                                                    <p>
-                                                        <strong>Active</strong>
-                                                    </p>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <p className="me-3">Currency</p>
-                                                    <p>
-                                                        <strong>USD</strong>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-7">
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="ms-3">
-                                                        <p>Credit Limit</p>
-                                                        <p>
-                                                            <strong>
-                                                                2000 USD
-                                                            </strong>
-                                                        </p>
-                                                    </div>
-                                                    <div id="circle1"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-xxl-12 col-xl-12 col-lg-12">
-                                <div className="credit-card payoneer">
-                                    <div className="type-brand">
-                                        <h4>Debit Card</h4>
-                                        <img
-                                            src="./images/cc/payoneer.png"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="cc-number">
-                                        <h6>1234</h6>
-                                        <h6>5678</h6>
-                                        <h6>7890</h6>
-                                        <h6>9875</h6>
-                                    </div>
-                                    <div className="cc-holder-exp">
-                                        <h5>Saiful Islam</h5>
-                                        <div className="exp">
-                                            <span>EXP:</span>
-                                            <strong>12/21</strong>
-                                        </div>
-                                    </div>
-                                    <div className="cc-info">
-                                        <div className="row">
-                                            <div className="col-5">
-                                                <div className="d-flex">
-                                                    <p className="me-3">Status</p>
-                                                    <p>
-                                                        <strong>Active</strong>
-                                                    </p>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <p className="me-3">Currency</p>
-                                                    <p>
-                                                        <strong>USD</strong>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-7">
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="ms-3">
-                                                        <p>Credit Limit</p>
-                                                        <p>
-                                                            <strong>
-                                                                1500/2000 USD
-                                                            </strong>
-                                                        </p>
-                                                    </div>
-                                                    <div id="circle3"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="main-wallet-header-list">
+                        <div className="wallet-icons-container-three">
+                           <div >
+                               <MdPolymer color="black" size={20} className="wallet-icons-three"/>
+                           </div>
                         </div>
+                         <div className="d-flex flex-column wallet-icons-child">
+                            <p>Total Earnings in USD$</p>
+                            <h2>$125,50</h2>
+                         </div>
                     </div>
                 </div>
-            </Layout>
+            {withdraw ?
+            ''
+            :
+            <div className="row row-div mt-3">
+                    <div className="col-xxl-6 col-xl-6 col-lg-6 cards" >
+                        <div className="card">
+                            <div> 
+                                <div className="sales-icons-list">
+                                    <div className="sales-icons-container">
+                                        <div >
+                                            <FiRefreshCcw  size={20} className="sales-icons" />
+                                        </div>
+                                    </div>
+                                    <div className="d-flex flex-column sales-icons-child">
+                                        <h2 style={{margin:'0px'}}>15</h2>
+                                        <p style={{margin:'0px'}}>Sales</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card">
+                            <div> 
+                                <div className="ref-visitor-list">
+                                    <div className="ref-visitor-container">
+                                        <div >
+                                            <FiRefreshCcw  size={20} className="ref-visitor" />
+                                        </div>
+                                    </div>
+                                    <div className="d-flex flex-column ref-visitor-child">
+                                        <h2 style={{margin:'0px'}}>15</h2>
+                                        <p style={{margin:'0px'}}>Sales</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="card">
+                            <div> 
+                                <div className="con-rate-list">
+                                    <div className="con-rate-container">
+                                        <div >
+                                            <FiRefreshCcw  size={20} className="con-rate" />
+                                        </div>
+                                    </div>
+                                    <div className="d-flex flex-column con-rate-child">
+                                        <h2 >7.9%</h2>
+                                        <p>Conversion Rate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="col-xxl-8 col-xl-8 col-lg-6">
+                            <div className="card" >
+                                <div className="card-body chart-height">
+                                        <div  className="states-label">
+                                              <div className="states-label-inner">
+                                                    <div onClick={()=>setlabel('Impressions')} className={`label ${label==='Impressions' ? 'state-label-active' :''}`}>
+                                                        Impressions
+                                                    </div>
+                                                    <div onClick={()=>setlabel('clicks')} className={`label ${label==='clicks' ? 'state-label-active' :''}`}>
+                                                        Clicks
+                                                    </div>
+                                                    <div onClick={()=>setlabel('sales')} className={`label ${label==='sales' ? 'state-label-active' :''}`}>
+                                                        Sales
+                                                    </div>
+                                                    <div onClick={()=>setlabel('orderValue')} className={`label ${label==='orderValue' ? 'state-label-active' :''}`}>
+                                                        Order Value
+                                                    </div>
+                                                    <div onClick={()=>setlabel('commission')} className={`label ${label==='commission' ? 'state-label-active' :''}`}>
+                                                        Commission
+                                                    </div>
+                                              </div>
+                                              <div className="label-dropmenu">
+                                                  <SelectDropdown/>
+                                                   {/* From <span className="withdraw-dropdown">Last 7 days</span> */}
+                                              </div>
+                                        </div>                                        
+                                        <LineInvestment
+                                                investmentData={investmentData}
+                                        />
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            }
+            <WithdrawSetting/>
+            </LayoutWithdraw>
         </>
     );
 }

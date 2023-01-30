@@ -3,6 +3,7 @@ import Head from 'next/head'
 import '../public/css/style.css';
 import store from '../redux/store';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'react-dropdown/style.css';
 
 function MyApp({ Component, pageProps }) {
     return (
