@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 function Sidebar() {
     const router = useRouter();
@@ -40,6 +41,17 @@ function Sidebar() {
                                 </a>
                             </Link>
                         </li>
+                        <li className={router.pathname == "/sales" ? "active" : ""}>
+                            <Link href="/sales">
+                                <a>
+                                    <span>
+                                       <AiOutlineShoppingCart size={23}/>
+                                     </span>
+                                    <span className="nav-text">Sales</span>
+                                </a>
+                            </Link>
+                        </li>
+
                         <li className={router.pathname == "/saved" ? "active" : ""}>
                             <Link href="/saved">
                                 <a>

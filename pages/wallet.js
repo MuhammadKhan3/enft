@@ -71,7 +71,7 @@ function Balance({ investmentData }) {
                     </div>
                 </div>
             {withdraw ?
-            ''
+                <WithdrawSetting/>
             :
             <div className="row row-div mt-3">
                     <div className="col-xxl-6 col-xl-6 col-lg-6 cards" >
@@ -158,7 +158,6 @@ function Balance({ investmentData }) {
                     </div>
                 </div>
             }
-            <WithdrawSetting/>
             </LayoutWithdraw>
         </>
     );

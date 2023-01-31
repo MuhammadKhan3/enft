@@ -87,7 +87,7 @@ function Home({ lineData, doughnutData }) {
                                                 </a>
                                                 <a
                                                     href=""
-                                                    className="btn btn-border-black"
+                                                    className="view-btn btn btn-border-black"
                                                 >
                                                     View
                                                 </a>
@@ -146,7 +146,7 @@ function Home({ lineData, doughnutData }) {
                                                 </a>
                                                 <a
                                                     href=""
-                                                    className="btn btn-border-black"
+                                                    className="view-btn btn btn-border-black"
                                                 >
                                                     View
                                                 </a>
