@@ -83,6 +83,7 @@ function GenerateLink() {
                                 <div className='social-title'> 
                                 Linkedin
                                 </div>
+                                {/*  */}
                             </div>
                         </div>
                         <div className='mt-5 w-auto'>                
