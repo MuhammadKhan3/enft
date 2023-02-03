@@ -12,7 +12,9 @@ const Layout = ({
     pageClass,
     parent,
     child,
+    description
 }) => {
+    console.log(description)
     const [height, setHeight] = useState();
     useEffect(() => {
         setHeight(window.screen.height);
@@ -32,6 +34,7 @@ const Layout = ({
                                 pageTitleSub={pageTitleSub}
                                 parent={parent}
                                 child={child}
+                                description={description}
                             />
                         )}
                         {children}

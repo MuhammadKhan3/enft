@@ -43,7 +43,7 @@ const RecentBid = () => {
     return (
         <>
             <div className="table-responsive" >
-                <table className="table">
+                <table className="table table-container">
                     <thead>
                         <tr>
                             <th>Amount Requested</th>

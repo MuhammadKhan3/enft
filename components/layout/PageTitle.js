@@ -1,4 +1,6 @@
-function PageTitle({ pageTitle, pageTitleSub, parent, child }) {
+
+
+function PageTitle({ pageTitle, pageTitleSub, parent, child ,description}) {
     return (
         <>
             <div className="page-title w-fit">
@@ -6,18 +8,12 @@ function PageTitle({ pageTitle, pageTitleSub, parent, child }) {
                     <div className="col-6 w-fit">
                         <div className="page-title-content w-fit">
                             <h3>{pageTitle}</h3>
+                            {description?.length>0 && <p className="mt-2 w-93 description">{description}</p>}
                             <p className="mb-2">{pageTitleSub}</p>
+
                         </div>
                     </div>
-                    {/* <div className="col-auto">
-                        <div className="breadcrumbs">
-                            <a href="#">{parent} </a>
-                            <span>
-                                <i className="ri-arrow-right-s-line"></i>
-                            </span>
-                            <a href="#">{child}</a>
-                        </div>
-                    </div> */}
+
                 </div>
             </div>
         </>

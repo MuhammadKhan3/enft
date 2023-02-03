@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import {BsLink45Deg} from 'react-icons/bs'
 
 function Sidebar() {
     const router = useRouter();
@@ -45,13 +46,13 @@ function Sidebar() {
                             <Link href="/sales">
                                 <a>
                                     <span>
-                                       <AiOutlineShoppingCart size={23}/>
+                                       <AiOutlineShoppingCart size={21}/>
                                      </span>
                                     <span className="nav-text">Sales</span>
                                 </a>
                             </Link>
                         </li>
-
+{/* 
                         <li className={router.pathname == "/saved" ? "active" : ""}>
                             <Link href="/saved">
                                 <a>
@@ -61,7 +62,7 @@ function Sidebar() {
                                     <span className="nav-text">Saved</span>
                                 </a>
                             </Link>
-                        </li>
+                        </li> */}
                         <li
                             className={
                                 router.pathname == "/collection" ? "active" : ""
@@ -87,6 +88,20 @@ function Sidebar() {
                                         <i className="ri-wallet-line"></i>
                                     </span>
                                     <span className="nav-text">Wallet</span>
+                                </a>
+                            </Link>
+                        </li>
+                        <li
+                            className={
+                                router.pathname == "/generateLink" ? "active" : ""
+                            }
+                        >
+                            <Link href="/generateLink">
+                                <a>
+                                    <span> 
+                                        <BsLink45Deg size={21}/>
+                                    </span>
+                                    <span className="nav-text">Generate</span>
                                 </a>
                             </Link>
                         </li>

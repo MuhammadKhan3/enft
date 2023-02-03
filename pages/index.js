@@ -3,6 +3,7 @@ import DoughnutChart from "../components/chart/DoughnutChart";
 import BarChart from "../components/chart/LineChart";
 import RecentBid from "../components/elements/RecentBid";
 import TopCreators from "../components/elements/TopCreators";
+
 import TrendingBids from "../components/elements/TrendingBids";
 import Layout from "../components/layout/Layout";
 import RecentActivity from "./../components/elements/RecentActivity";
